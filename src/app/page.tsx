@@ -59,7 +59,8 @@ export default function Home() {
         {/* Image on Right for Desktop, Bottom for Mobile */}
         <div className="relative order-1 md:order-2 h-64 md:h-auto md:self-stretch w-full md:basis-2/5">
           <Image
-            src="https://picsum.photos/seed/creativity/600/400" // Replaced /creativity.png with a placeholder
+            // src="https://picsum.photos/seed/creativity/600/400" // Replaced /creativity.png with a placeholder
+            src="https://entsoft.com.ng/creativity.png" // Replaced /creativity.png with a placeholder
             alt="Students learning and being creative"
             fill 
             style={{ objectFit: 'cover' }} 

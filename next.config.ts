@@ -17,6 +17,12 @@ const nextConfig: NextConfig = {
         port: '',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'entsoft.com.ng',
+        port: '',
+        pathname: '/**',
+      }
     ],
   },
 };
