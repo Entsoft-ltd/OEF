@@ -37,80 +37,46 @@ export default function Home() {
   return (
     <div className="container mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
       {/* Hero Section */}
-      <section className="rounded-lg bg-primary text-primary-foreground flex flex-col md:flex-row items-center shadow-xl overflow-hidden my-0 mx-auto md:max-w-full lg:max-w-7xl">
-        {/* Text Content */}
-        <div className="w-full md:basis-3/5 p-6 md:p-10 lg:p-12 order-2 md:order-1 text-center md:text-left">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+      <section className="my-0 mx-auto flex flex-col overflow-hidden rounded-lg bg-primary text-primary-foreground shadow-xl md:max-w-full lg:max-w-7xl md:flex-row">
+        {/* Text Content on Left for Desktop, Top for Mobile */}
+        <div className="order-2 w-full p-6 text-center md:order-1 md:basis-3/5 md:p-10 md:text-left lg:p-12">
+          <h1 className="mb-6 text-3xl font-bold md:text-4xl lg:text-5xl">
             Onicha Education Foundation
           </h1>
-          <p className="text-lg md:text-xl leading-relaxed mb-8 opacity-90">
+          <p className="mb-8 text-lg leading-relaxed opacity-90 md:text-xl">
             Empowering our community through education by providing learning opportunities, vocational training, 
             and personal development programs that uplift individuals and strengthen the fabric of our society.
           </p>
           <Link href="/contact-resources#contact" passHref>
             <Button
               size="lg"
-              className="bg-accent hover:bg-accent/90 text-accent-foreground px-10 py-4 rounded-full text-lg font-semibold transition-transform duration-300 ease-in-out hover:translate-y-[-2px]"
+              className="rounded-full bg-accent px-10 py-4 text-lg font-semibold text-accent-foreground transition-transform duration-300 ease-in-out hover:translate-y-[-2px] hover:bg-accent/90"
             >
               Contact Us
             </Button>
           </Link>
         </div>
-        {/* Image Container */}
-        <div className="order-1 md:order-2 w-full md:basis-2/5 flex items-center justify-center p-4 sm:p-6">
+        
+        {/* Image on Right for Desktop, Bottom for Mobile */}
+         <div className="relative order-1 mx-auto mt-6 md:order-2 md:mt-0 md:self-stretch w-4/5 sm:w-3/5 md:w-auto md:basis-2/5 h-64 md:h-auto">
           <Image
-            src="https://entsoft.com.ng/creativity.png"
+            src="https://entsoft.com.ng/creativity.png" 
             alt="Students learning and being creative"
-            width={512} 
-            height={512} 
-            className="rounded-lg object-cover w-full h-auto max-h-[240px] sm:max-h-[280px] md:max-h-[320px] lg:max-h-[350px]"
-            data-ai-hint="education students learning"
+            fill 
+            style={{ objectFit: 'contain' }} 
+            className="md:rounded-r-lg"
+            data-ai-hint="education students"
             priority
           />
         </div>
       </section>
 
-      {/* Welcome Message */}
-      <section className="mt-12 mb-12"> {/* Added mt-12 to match hero section's implicit top spacing */}
-        <Card className="shadow-lg">
-          <CardHeader>
-            <CardTitle className="text-2xl text-primary">From The Coordinator's Desk</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4 text-card-foreground">
-          <p>
-  At Onicha Education Foundation, we believe education is the cornerstone of lasting change.
-  Our mission is to provide accessible learning opportunities, vocational training, and personal
-  development programs that uplift individuals and strengthen our entire community.
-</p>
-<p>
-  From sponsoring school fees and distributing educational materials to organizing skill-based
-  workshops and mentorship programs, we're committed to building a brighter, more self-reliant
-  future for Onicha and beyond.
-</p>
-<p>
-  Join us as we invest in the next generation of leaders, thinkers, and innovators.
-</p>
-            <p>
-              I invite all of us from Onicha to own this organisation and support it to reposition
-              education and educational empowerment in the community.
-            </p>
-            <p className="font-semibold">
-              God bless OEF. God bless Onicha community.
-            </p>
-            <p className="text-right font-medium">
-              Chukwuma Ogbonnaya, BEng, PGDE, MSc, FHEA, MNSE, MIET.
-              <br />
-              Coordinator, Onicha Education Foundation.
-            </p>
-          </CardContent>
-        </Card>
-      </section>
+    
 
       {/* About OEF Overview */}
-      <section className="mb-12">
-        <h2 className="mb-6 text-center text-3xl font-bold text-primary">About OEF</h2>
+      <section className="mt-12 mb-12">
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          <Card>
+          <Card className="shadow-md hover:shadow-lg transition-shadow">
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-xl"><Target className="h-6 w-6 text-primary" /> Mission</CardTitle>
             </CardHeader>
@@ -118,7 +84,7 @@ export default function Home() {
               <p>Mobilize Onicha-Igboeze sons and daughters from all works of life to collaborate in building a progressive community in which everyone is fulfilled...</p>
             </CardContent>
           </Card>
-          <Card>
+          <Card className="shadow-md hover:shadow-lg transition-shadow">
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-xl"><Building className="h-6 w-6 text-primary" /> Vision</CardTitle>
             </CardHeader>
@@ -126,7 +92,7 @@ export default function Home() {
               <p>To give every child from Onicha-Igboeze the opportunity to reach their full potential through inspiration, education, and training.</p>
             </CardContent>
           </Card>
-          <Card>
+          <Card className="shadow-md hover:shadow-lg transition-shadow">
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-xl"><Gem className="h-6 w-6 text-primary" /> Philosophy</CardTitle>
             </CardHeader>
@@ -139,7 +105,7 @@ export default function Home() {
       
       {/* Core Values & Objectives */}
       <section className="mb-12 grid gap-8 md:grid-cols-2">
-        <Card>
+        <Card className="shadow-md">
           <CardHeader>
             <CardTitle className="text-2xl text-primary">Our Core Values (ONICHA-IGBOEZE)</CardTitle>
           </CardHeader>
@@ -154,7 +120,7 @@ export default function Home() {
             </ul>
           </CardContent>
         </Card>
-        <Card>
+        <Card className="shadow-md">
           <CardHeader>
             <CardTitle className="text-2xl text-primary">Our Objectives</CardTitle>
           </CardHeader>
@@ -188,6 +154,47 @@ export default function Home() {
           </CardContent>
         </Card>
       </section>
+
+    
+
+      {/* Welcome Message */}
+      <section className="mt-12 mb-12"> {/* Added mt-12 to match hero section's implicit top spacing */}
+        <Card className="shadow-lg">
+          <CardHeader>
+            <CardTitle className="text-2xl text-primary">From The Coordinator&apos;s Desk</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4 text-card-foreground">
+          <p>
+  At Onicha Education Foundation, we believe education is the cornerstone of lasting change.
+  Our mission is to provide accessible learning opportunities, vocational training, and personal
+  development programs that uplift individuals and strengthen our entire community.
+</p>
+<p>
+  From sponsoring school fees and distributing educational materials to organizing skill-based
+  workshops and mentorship programs, we&apos;re committed to building a brighter, more self-reliant
+  future for Onicha and beyond.
+</p>
+<p>
+  Join us as we invest in the next generation of leaders, thinkers, and innovators.
+</p>
+            <p>
+              I invite all of us from Onicha to own this organisation and support it to reposition
+              education and educational empowerment in the community.
+            </p>
+            <p className="font-semibold">
+              God bless OEF. God bless Onicha community.
+            </p>
+            <p className="text-right font-medium">
+              Chukwuma Ogbonnaya, BEng, PGDE, MSc, FHEA, MNSE, MIET.
+              <br />
+              Coordinator, Onicha Education Foundation.
+            </p>
+          </CardContent>
+        </Card>
+      </section>
+
+
     </div>
   );
 }
+
