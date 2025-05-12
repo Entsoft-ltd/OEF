@@ -36,7 +36,7 @@ const objectives = [
 export default function Home() {
   return (
     <div className="container mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-      {/* New Hero Section */}
+      {/* Hero Section */}
       <section className="my-8 md:m-8 rounded-lg overflow-hidden bg-primary text-primary-foreground md:min-h-[400px] flex flex-col md:flex-row items-center shadow-xl">
         {/* Text Content on Left for Desktop, Top for Mobile */}
         <div className="w-full md:basis-3/4 p-8 md:pl-12 md:pr-8 order-1 md:order-1 text-center md:text-left">
@@ -56,14 +56,13 @@ export default function Home() {
           </Link>
         </div>
         {/* Image on Right for Desktop, Bottom for Mobile */}
-        <div className="w-full md:basis-1/4 relative order-2 md:order-2 h-64 md:h-auto md:self-stretch">
+        <div className="relative order-2 md:order-2 h-64 md:h-auto md:self-stretch w-full md:basis-1/4">
           <Image
-            src="https://picsum.photos/seed/creativity/600/800" 
-            alt="Creative learning environment with diverse students"
+            src="/images/creativity.png" 
+            alt="Profile Image"
             layout="fill"
             objectFit="cover"
             className="md:rounded-r-lg"
-            data-ai-hint="creativity education students"
             priority
           />
         </div>
@@ -76,24 +75,19 @@ export default function Home() {
             <CardTitle className="text-2xl text-primary">From The Coordinator's Desk</CardTitle>
           </CardHeader>
           <CardContent className="space-y-4 text-card-foreground">
-            <p>
-              I am delighted that OEF is presenting its first annual report after a year it started. As
-              part of best practices and organisational development, annual reporting is important
-              for OEF for the following reasons.
-            </p>
-            <p>
-              First, annual reporting will enable us to reflect on the activities of the year and
-              document the plan for the following year. This is strategically important because it
-              will allow members to reflect, extract the lessons learned and co-create the
-              programmes and projects.
-            </p>
-            <p>
-              Second, the annual report would serve as a communication medium with OEF's
-              stakeholders... In this 2021 annual report, we present the key activities around registration of OEF,
-              Virtual Community Interaction, OEF Final Year Research Grant, OEF-Students end of
-              the year programme, and efforts to systemize the operations of the organisation.
-              Herein as well, the key projects for 2022 are highlighted.
-            </p>
+          <p>
+  At Onicha Education Foundation, we believe education is the cornerstone of lasting change.
+  Our mission is to provide accessible learning opportunities, vocational training, and personal
+  development programs that uplift individuals and strengthen our entire community.
+</p>
+<p>
+  From sponsoring school fees and distributing educational materials to organizing skill-based
+  workshops and mentorship programs, we're committed to building a brighter, more self-reliant
+  future for Onicha and beyond.
+</p>
+<p>
+  Join us as we invest in the next generation of leaders, thinkers, and innovators.
+</p>
             <p>
               I invite all of us from Onicha to own this organisation and support it to reposition
               education and educational empowerment in the community.
