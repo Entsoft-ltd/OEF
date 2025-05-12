@@ -35,9 +35,11 @@ export default function Navbar() {
               asChild
               className={cn(
                 "text-sm font-medium",
+                // Common hover state for all items
+                "hover:bg-primary hover:text-primary-foreground",
                 pathname === item.href
-                  ? "text-primary hover:text-primary"
-                  : "text-foreground hover:text-primary/80"
+                  ? "text-primary" // Active (non-hover)
+                  : "text-foreground" // Inactive (non-hover)
               )}
             >
               <Link href={item.href}>{item.label}</Link>
@@ -60,10 +62,12 @@ export default function Navbar() {
                     key={item.href}
                     href={item.href}
                     className={cn(
-                      "rounded-md px-3 py-2 text-base font-medium hover:bg-accent hover:text-accent-foreground",
+                      "rounded-md px-3 py-2 text-base font-medium",
+                      // Common hover state for all items
+                      "hover:bg-primary hover:text-primary-foreground",
                       pathname === item.href
-                        ? "bg-primary text-primary-foreground"
-                        : "text-foreground"
+                        ? "bg-primary text-primary-foreground" // Active (non-hover & hover)
+                        : "text-foreground" // Inactive (non-hover)
                     )}
                   >
                     {item.label}
