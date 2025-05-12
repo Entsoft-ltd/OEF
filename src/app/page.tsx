@@ -1,7 +1,9 @@
 
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import Image from "next/image";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 import { Building, Target, Gem, Handshake, HandHelping, Briefcase, Users, Sparkles, Scale, HeartHandshake, CheckCircle, Lightbulb, Trophy } from "lucide-react";
 
 const coreValues = [
@@ -34,26 +36,37 @@ const objectives = [
 export default function Home() {
   return (
     <div className="container mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-      {/* Hero Section */}
-      <section className="mb-12 rounded-lg bg-card p-8 text-center shadow-lg">
-        <Image 
-          src="https://picsum.photos/1200/400?random=1" 
-          alt="Onicha Community" 
-          width={1200} 
-          height={400} 
-          className="mb-6 rounded-md object-cover"
-          data-ai-hint="community children education"
-          priority
-        />
-        <h1 className="text-4xl font-bold tracking-tight text-primary sm:text-5xl">
-          ONICHA EDUCATION FOUNDATION
-        </h1>
-        <p className="mt-4 text-xl text-muted-foreground">
-          Empowering Our Community Through Education and Training
-        </p>
-        <p className="mt-2 text-lg text-muted-foreground">
-          2021 Annual Report Highlights & Our Journey Forward
-        </p>
+      {/* New Hero Section */}
+      <section className="my-8 md:m-8 rounded-lg overflow-hidden bg-primary text-primary-foreground md:min-h-[400px] flex flex-col md:flex-row items-center shadow-xl">
+        {/* Text Content on Left for Desktop, Top for Mobile */}
+        <div className="w-full md:basis-3/4 p-8 md:pl-12 md:pr-8 order-1 md:order-1 text-center md:text-left">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+            Onicha Education Foundation
+          </h1>
+          <p className="text-lg md:text-xl leading-relaxed mb-8 opacity-90">
+            Empowering our community through education by providing learning opportunities, vocational training, 
+            and personal development programs that uplift individuals and strengthen the fabric of our society.
+          </p>
+          <Link href="/contact-resources#contact" passHref>
+            <Button
+              className="bg-accent hover:bg-accent/90 text-accent-foreground px-10 py-4 rounded-full text-lg font-semibold transition-transform duration-300 ease-in-out hover:translate-y-[-2px]"
+            >
+              Contact Us
+            </Button>
+          </Link>
+        </div>
+        {/* Image on Right for Desktop, Bottom for Mobile */}
+        <div className="w-full md:basis-1/4 relative order-2 md:order-2 h-64 md:h-auto md:self-stretch">
+          <Image
+            src="https://picsum.photos/seed/creativity/600/800" 
+            alt="Creative learning environment with diverse students"
+            layout="fill"
+            objectFit="cover"
+            className="md:rounded-r-lg"
+            data-ai-hint="creativity education students"
+            priority
+          />
+        </div>
       </section>
 
       {/* Welcome Message */}
