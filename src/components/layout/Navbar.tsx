@@ -35,11 +35,9 @@ export default function Navbar() {
               asChild
               className={cn(
                 "text-sm font-medium",
-                // Common hover state for all items
-                "hover:bg-primary hover:text-primary-foreground",
                 pathname === item.href
-                  ? "text-primary" // Active (non-hover)
-                  : "text-foreground" // Inactive (non-hover)
+                  ? "bg-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground" // Active state: primary bg/fg, hover maintains this.
+                  : "text-foreground hover:bg-primary hover:text-primary-foreground" // Inactive state: default fg, hover gets primary bg/fg.
               )}
             >
               <Link href={item.href}>{item.label}</Link>
@@ -63,11 +61,9 @@ export default function Navbar() {
                     href={item.href}
                     className={cn(
                       "rounded-md px-3 py-2 text-base font-medium",
-                      // Common hover state for all items
-                      "hover:bg-primary hover:text-primary-foreground",
                       pathname === item.href
-                        ? "bg-primary text-primary-foreground" // Active (non-hover & hover)
-                        : "text-foreground" // Inactive (non-hover)
+                        ? "bg-primary text-primary-foreground" // Active state for mobile (covers hover too)
+                        : "text-foreground hover:bg-primary hover:text-primary-foreground" // Inactive state for mobile
                     )}
                   >
                     {item.label}
