@@ -3,7 +3,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { BookOpenText, Menu } from "lucide-react";
+import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
@@ -36,8 +36,8 @@ export default function Navbar() {
               className={cn(
                 "text-sm font-medium",
                 pathname === item.href
-                  ? "bg-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground" // Active state: primary bg/fg, hover maintains this.
-                  : "text-foreground hover:bg-primary hover:text-primary-foreground" // Inactive state: default fg, hover gets primary bg/fg.
+                  ? "bg-card text-primary hover:bg-primary hover:text-primary-foreground" // Active state: white bg, purple text. Hover: primary bg, white text.
+                  : "text-foreground hover:bg-primary hover:text-primary-foreground" // Inactive state: default fg, Hover: primary bg, white text.
               )}
             >
               <Link href={item.href}>{item.label}</Link>
@@ -62,7 +62,7 @@ export default function Navbar() {
                     className={cn(
                       "rounded-md px-3 py-2 text-base font-medium",
                       pathname === item.href
-                        ? "bg-primary text-primary-foreground" // Active state for mobile (covers hover too)
+                        ? "bg-card text-primary" // Active state for mobile: white bg, purple text
                         : "text-foreground hover:bg-primary hover:text-primary-foreground" // Inactive state for mobile
                     )}
                   >
