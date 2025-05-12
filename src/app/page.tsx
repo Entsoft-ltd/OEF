@@ -37,7 +37,7 @@ export default function Home() {
   return (
     <div className="container mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
       {/* Hero Section */}
-      <section className="mt-0 mb-8 mx-4 md:mx-8 rounded-lg overflow-hidden bg-primary text-primary-foreground md:min-h-[400px] flex flex-col md:flex-row items-center shadow-xl">
+      <section className="mt-0 mb-12 rounded-lg overflow-hidden bg-primary text-primary-foreground md:min-h-[400px] flex flex-col md:flex-row items-center shadow-xl">
         {/* Text Content on Left for Desktop, Top for Mobile */}
         <div className="w-full md:basis-3/4 p-6 md:p-12 order-2 md:order-1 text-center md:text-left">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
