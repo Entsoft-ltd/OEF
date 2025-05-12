@@ -37,9 +37,9 @@ export default function Home() {
   return (
     <div className="container mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
       {/* Hero Section */}
-      <section className="my-8 md:m-8 rounded-lg overflow-hidden bg-primary text-primary-foreground md:min-h-[400px] flex flex-col md:flex-row items-center shadow-xl">
+      <section className="mt-0 mb-8 mx-4 md:mx-8 rounded-lg overflow-hidden bg-primary text-primary-foreground md:min-h-[400px] flex flex-col md:flex-row items-center shadow-xl">
         {/* Text Content on Left for Desktop, Top for Mobile */}
-        <div className="w-full md:basis-3/4 p-8 md:pl-12 md:pr-8 order-1 md:order-1 text-center md:text-left">
+        <div className="w-full md:basis-3/4 p-6 md:p-12 order-2 md:order-1 text-center md:text-left">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
             Onicha Education Foundation
           </h1>
@@ -56,13 +56,14 @@ export default function Home() {
           </Link>
         </div>
         {/* Image on Right for Desktop, Bottom for Mobile */}
-        <div className="relative order-2 md:order-2 h-64 md:h-auto md:self-stretch w-full md:basis-1/4">
+        <div className="relative order-1 md:order-2 h-64 md:h-auto md:self-stretch w-full md:basis-1/4">
           <Image
             src="/images/creativity.png" 
-            alt="Profile Image"
+            alt="Students learning and being creative"
             layout="fill"
             objectFit="cover"
             className="md:rounded-r-lg"
+            data-ai-hint="education students"
             priority
           />
         </div>
