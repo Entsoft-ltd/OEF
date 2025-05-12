@@ -37,9 +37,9 @@ export default function Home() {
   return (
     <div className="container mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
       {/* Hero Section */}
-      <section className="mb-12 rounded-lg overflow-hidden bg-primary text-primary-foreground min-h-[400px] flex flex-col md:flex-row items-center shadow-xl">
+      <section className="rounded-lg bg-primary text-primary-foreground flex flex-col md:flex-row items-center shadow-xl overflow-hidden my-0 mx-auto md:max-w-full lg:max-w-7xl">
         {/* Text Content */}
-        <div className="w-full md:basis-3/5 p-6 md:p-12 order-2 md:order-1 text-center md:text-left">
+        <div className="w-full md:basis-3/5 p-6 md:p-10 lg:p-12 order-2 md:order-1 text-center md:text-left">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
             Onicha Education Foundation
           </h1>
@@ -56,15 +56,14 @@ export default function Home() {
             </Button>
           </Link>
         </div>
-        {/* Image on Right for Desktop, Bottom for Mobile */}
-        <div className="relative order-1 md:order-2 h-64 md:h-auto md:self-stretch w-full md:basis-2/5">
+        {/* Image Container */}
+        <div className="order-1 md:order-2 w-full md:basis-2/5 flex items-center justify-center p-4 sm:p-6">
           <Image
-            // src="https://picsum.photos/seed/creativity/600/400" // Replaced /creativity.png with a placeholder
-            src="https://entsoft.com.ng/creativity.png" // Replaced /creativity.png with a placeholder
+            src="https://entsoft.com.ng/creativity.png"
             alt="Students learning and being creative"
-            fill 
-            style={{ objectFit: 'cover' }} 
-            className="md:rounded-r-lg"
+            width={512} 
+            height={512} 
+            className="rounded-lg object-cover w-full h-auto max-h-[240px] sm:max-h-[280px] md:max-h-[320px] lg:max-h-[350px]"
             data-ai-hint="education students learning"
             priority
           />
@@ -72,7 +71,7 @@ export default function Home() {
       </section>
 
       {/* Welcome Message */}
-      <section className="mb-12">
+      <section className="mt-12 mb-12"> {/* Added mt-12 to match hero section's implicit top spacing */}
         <Card className="shadow-lg">
           <CardHeader>
             <CardTitle className="text-2xl text-primary">From The Coordinator's Desk</CardTitle>
