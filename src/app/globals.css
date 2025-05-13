@@ -51,6 +51,12 @@ body {
     --sidebar-accent-foreground: 256 44% 32%; /* Adjusted for new primary */
     --sidebar-border: 270 30% 85%;
     --sidebar-ring: 256 44% 45%; /* New Primary ring */
+
+    /* Colors for animated background */
+    --bg-anim-1: 270 60% 97%;
+    --bg-anim-2: 270 65% 96%;
+    --bg-anim-3: 280 60% 97%;
+    --bg-anim-4: 260 60% 97%;
   }
 
   .dark {
@@ -95,7 +101,19 @@ body {
     --sidebar-accent-foreground: 270 40% 80%;
     --sidebar-border: 270 10% 25%;
     --sidebar-ring: 256 44% 55%; /* New Primary ring dark */
+
+    /* Colors for animated background in dark mode */
+    --bg-anim-1: 270 15% 10%;
+    --bg-anim-2: 270 20% 9%;
+    --bg-anim-3: 280 15% 10%;
+    --bg-anim-4: 260 15% 10%;
   }
+}
+
+@keyframes animatedBackground {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 @layer base {
@@ -103,6 +121,14 @@ body {
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply text-foreground;
+    background: linear-gradient(135deg, 
+      hsl(var(--bg-anim-1)), 
+      hsl(var(--bg-anim-2)), 
+      hsl(var(--bg-anim-3)), 
+      hsl(var(--bg-anim-4))
+    );
+    background-size: 600% 600%;
+    animation: animatedBackground 45s ease infinite;
   }
 }
