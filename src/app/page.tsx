@@ -74,7 +74,7 @@ export default function Home() {
     
 
       {/* About OEF Overview */}
-      <section className="mt-12 mb-12">
+      <section className="mt-10 mb-10">
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           <Card className="shadow-md hover:shadow-lg transition-shadow">
             <CardHeader>
@@ -174,21 +174,20 @@ export default function Home() {
   workshops and mentorship programs, we&apos;re committed to building a brighter, more self-reliant
   future for Onicha and beyond.
 </p>
-<p>
-  Join us as we invest in the next generation of leaders, thinkers, and innovators.
-</p>
             <p>
               I invite all of us from Onicha to own this organisation and support it to reposition
-              education and educational empowerment in the community.
+              education and educational empowerment in the community,as we invest in the next generation of leaders, thinkers, and innovators.
             </p>
-            <p className="font-semibold">
-              God bless OEF. God bless Onicha community.
-            </p>
+           
             <p className="text-right font-medium">
               Chukwuma Ogbonnaya, BEng, PGDE, MSc, FHEA, MNSE, MIET.
               <br />
               Coordinator, Onicha Education Foundation.
+              <br />
+               God bless Onicha community.
+              
             </p>
+           
           </CardContent>
         </Card>
       </section>
