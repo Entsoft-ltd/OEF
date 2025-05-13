@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 import OEFLogo from "@/components/oef-logo";
+import { useState } from "react"; // Added useState
 
 const navItems = [
   { href: "/", label: "Home" },
@@ -19,6 +20,7 @@ const navItems = [
 
 export default function Navbar() {
   const pathname = usePathname();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); // State for mobile menu
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-card shadow-sm">
@@ -36,8 +38,8 @@ export default function Navbar() {
               className={cn(
                 "text-sm font-medium",
                 pathname === item.href
-                  ? "bg-card text-primary hover:bg-primary hover:text-primary-foreground" // Active state: white bg, purple text. Hover: primary bg, white text.
-                  : "text-foreground hover:bg-primary hover:text-primary-foreground" // Inactive state: default fg, Hover: primary bg, white text.
+                  ? "bg-card text-primary hover:bg-primary hover:text-primary-foreground" // Active: card bg, primary text. Hover: primary bg, primary-fg text.
+                  : "text-foreground hover:bg-primary hover:text-primary-foreground" // Inactive: default fg. Hover: primary bg, primary-fg text.
               )}
             >
               <Link href={item.href}>{item.label}</Link>
@@ -46,7 +48,7 @@ export default function Navbar() {
         </nav>
 
         <div className="md:hidden">
-          <Sheet>
+          <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon">
                 <Menu className="h-6 w-6" />
@@ -62,9 +64,10 @@ export default function Navbar() {
                     className={cn(
                       "rounded-md px-3 py-2 text-base font-medium",
                       pathname === item.href
-                        ? "bg-card text-primary" // Active state for mobile: white bg, purple text
+                        ? "bg-card text-primary" // Active state for mobile: card bg, primary text
                         : "text-foreground hover:bg-primary hover:text-primary-foreground" // Inactive state for mobile
                     )}
+                    onClick={() => setIsMobileMenuOpen(false)} // Close sheet on click
                   >
                     {item.label}
                   </Link>
@@ -77,3 +80,4 @@ export default function Navbar() {
     </header>
   );
 }
+
